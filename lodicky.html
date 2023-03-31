@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Lodě</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <h1>Lodě</h1>
+    </header>
+    <div class="vedle">
+        <div class="sloupec">
+            <div class="text">
+                <h2>Ty</h2>
+                <h4>Nápověda</h4>
+                <p>Dvojklik - umístíš políčko lodi <br> Klik na loď - zásah, políčko zčervená <br> Klik na vodu - vedle, políčko zbělá <br></p>
+            </div>
+    
+                <table>
+                    <script>
+                        document.write("<tr>");
+                        for (var i = 0; i < 11; i++) 
+                        {
+                            if(i == 0)
+                            {
+                                document.write("<th></th>");
+                            }
+                            else
+                            document.write("<th>" + i + "</th>");                
+                        }
+                        
+                        for (var i = 0; i < 10; i++) 
+                        {
+                            document.write("<tr>");
+                            document.write("<th>" + String.fromCharCode(65 + i) + "</th>");
+                            for (var j = 0; j < 10; j++) {
+                                document.write("<td ondblclick='lod(this)' onclick='zasah(this)'></td>");
+                            }
+                            document.write("</tr>");
+                        }
+                    </script>
+                </table>
+        </div>
+
+        <div class="sloupec">
+            <div class="text">
+                <h2>Soupeř</h2>
+                <h4>Nápověda</h4>
+                <p>Dvojklik - zásah, políčko zezelená <br>Klik - vedle, políčko zbělá</p>
+            </div>
+            
+            <table>
+                <script>
+                    document.write("<tr>");
+                        for (var i = 0; i < 11; i++) 
+                        {
+                            if(i == 0)
+                            {
+                                document.write("<th></th>");
+                            }
+                            else
+                            document.write("<th>" + i + "</th>");                
+                        }
+
+                    for(var i = 0; i < 10; i++)
+                    {
+                        document.write("<tr>");
+                        document.write("<th>" + String.fromCharCode(65 + i) + "</th>");
+                        for (var j = 0; j < 10; j++) {
+                            document.write("<td onclick = 'vedle(this)' ondblclick = 'trefa(this)'></td>");
+                        }
+                        document.write("</tr>");
+                    }     
+                </script>
+            </table>
+        </div>
+    </div>
+        
+    <script src="script.js"></script>
+</body>
+</html>
